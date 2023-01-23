@@ -26,7 +26,7 @@ function Home() {
             throw new Error('Request failed');
         }, networkError => console.log(networkError.message)
     ).then(textRes => {
-        let split = textRes.split("\r\n");
+        let split = textRes.split("\n");
         for(let i = 0; i < split.length; i++){
             split[i] = split[i].slice(1);
         }

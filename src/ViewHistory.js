@@ -21,7 +21,7 @@ const Item = styled(Paper)(({theme}) => ({
 
 export default function ViewHistory() {
     const [ranking, setRanking] = React.useState('most recent');
-    let historyArr = JSON.parse(window.localStorage.getItem('history')).reverse();
+    let historyArr = JSON.parse(localStorage.getItem('history') || '[]').reverse();
     if(ranking === 'highest'){
         historyArr.sort((h1, h2) => {
             if(h1.rating < h2.rating){

@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Dogs from './Home';
+import Home from './Home';
 import Header from './Header';
 import ViewHistory from './ViewHistory'
 import {createTheme, ThemeProvider} from "@mui/material";
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Routes, Route, HashRouter} from "react-router-dom";
 
 
 function App() {
@@ -18,13 +18,13 @@ function App() {
                                 {main: '#5b5b5b'}}
                 }
             )}>
-                <BrowserRouter basename={process.env.PUBLIC_URL_}>
+                <HashRouter>
                     <Header/>
                     <Routes>
-                        <Route path="/" element={<Dogs/>} />
-                        <Route path="ViewHistory" element={<ViewHistory/>} />
+                        <Route path="/" element={<Home/>} />
+                        <Route path="/ViewHistory" element={<ViewHistory/>} />
                     </Routes>
-                </BrowserRouter>
+                </HashRouter>
             </ThemeProvider>
         </div>
     );
