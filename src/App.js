@@ -18,7 +18,7 @@ function App() {
                                 {main: '#5b5b5b'}}
                 }
             )}>
-                <BrowserRouter>
+                <BrowserRouter basename={process.env.PUBLIC_URL_}>
                     <Header/>
                     <Routes>
                         <Route path="/" element={<Dogs/>} />
