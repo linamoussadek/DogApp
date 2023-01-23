@@ -19,28 +19,27 @@ function Home() {
     };
 
     useEffect(() => {
-    fetch('breeds.txt').then(res => {
-            if (res.ok) {
-                return res.text();
+        fetch('breeds.txt').then(res => {
+                if (res.ok) {
+                    return res.text();
+                }
+                throw new Error('Request failed');
+            }, networkError => console.log(networkError.message)
+        ).then(textRes => {
+            let split = textRes.split("\n");
+            for (let i = 0; i < split.length; i++) {
+                split[i] = split[i].slice(1).replaceAll('-', '/');
             }
-            throw new Error('Request failed');
-        }, networkError => console.log(networkError.message)
-    ).then(textRes => {
-        let split = textRes.split("\n");
-        for(let i = 0; i < split.length; i++){
-            split[i] = split[i].slice(1);
-        }
-        setBreeds(split);
-    })},  [])
-
+            setBreeds(split);
+        })
+    }, [])
 
 
     function fetch_data(selectedBreed) {
         let fetchUrl = '';
-        if(selectedBreed){
+        if (selectedBreed) {
             fetchUrl = 'https://dog.ceo/api/breed/' + selectedBreed + '/images/random'
-        }
-        else{
+        } else {
             fetchUrl = 'https://dog.ceo/api/breeds/image/random'
         }
         fetch(fetchUrl).then(res => {
@@ -54,8 +53,8 @@ function Home() {
         })
     }
 
-    function formatBreed(breed){
-        return breed.charAt(0).toUpperCase() + breed.slice(1).replaceAll('-', ' ');
+    function formatBreed(breed) {
+        return breed.charAt(0).toUpperCase() + breed.slice(1).replaceAll('/', ' ');
     }
 
 
@@ -92,7 +91,8 @@ function Home() {
                 <BasicRating fetch_data={() => fetch_data(breed)} url={url} defaultRating={0}/>
             </Box>
             <Stack spacing={2} direction="row">
-                <Button variant="contained" sx={{m: 2}} onClick={() => fetch_data(breed)} color={"secondary"}>Skip</Button>
+                <Button variant="contained" sx={{m: 2}} onClick={() => fetch_data(breed)}
+                        color={"secondary"}>Skip</Button>
             </Stack>
         </div>
     )

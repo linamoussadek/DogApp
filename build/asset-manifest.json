@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/DogApp/static/css/main.21c0d35b.css",
-    "main.js": "/DogApp/static/js/main.189c874d.js",
+    "main.js": "/DogApp/static/js/main.a5f4b40b.js",
     "index.html": "/DogApp/index.html",
     "main.21c0d35b.css.map": "/DogApp/static/css/main.21c0d35b.css.map",
-    "main.189c874d.js.map": "/DogApp/static/js/main.189c874d.js.map"
+    "main.a5f4b40b.js.map": "/DogApp/static/js/main.a5f4b40b.js.map"
   },
   "entrypoints": [
     "static/css/main.21c0d35b.css",
-    "static/js/main.189c874d.js"
+    "static/js/main.a5f4b40b.js"
   ]
 }

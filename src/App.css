@@ -1,39 +1,39 @@
-*{
-  padding: 0;
-  margin: 0;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.header_main{
-  background-color: #885a39;
-  font-family: "Gabriola";
-  color: #e3e2e2;
-  height: 10vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.header_main {
+    background-color: #885a39;
+    font-family: "Gabriola";
+    color: #e3e2e2;
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.dog_main{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.dog_main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.dog_img{
-  height: 35vh;
-  max-width: 30%;
-  margin: 1rem;
-  border-radius: 10px;
+.dog_img {
+    height: 35vh;
+    max-width: 30%;
+    margin: 1rem;
+    border-radius: 10px;
 }
 
-.dog_btn{
-  padding: 1rem;
-  margin: 1rem;
-  background-color: #885a39;
-  font-family: Gabriola;
+.dog_btn {
+    padding: 1rem;
+    margin: 1rem;
+    background-color: #885a39;
+    font-family: Gabriola;
 }
 

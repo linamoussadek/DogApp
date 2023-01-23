@@ -12,7 +12,7 @@ export default function DropDownRanking(props) {
     };
 
     return (
-        <Box sx={{ minWidth: 120 }}>
+        <Box sx={{minWidth: 120}}>
             <FormControl fullWidth>
                 <InputLabel>Rank ratings from</InputLabel>
                 <Select

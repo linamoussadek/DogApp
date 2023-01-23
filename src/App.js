@@ -12,17 +12,19 @@ function App() {
         <div className="App">
             <ThemeProvider theme={createTheme({
                     palette:
-                        {primary:
+                        {
+                            primary:
                                 {main: '#885a39'},
                             secondary:
-                                {main: '#5b5b5b'}}
+                                {main: '#5b5b5b'}
+                        }
                 }
             )}>
                 <HashRouter>
                     <Header/>
                     <Routes>
-                        <Route path="/" element={<Home/>} />
-                        <Route path="/ViewHistory" element={<ViewHistory/>} />
+                        <Route path="/" element={<Home/>}/>
+                        <Route path="/ViewHistory" element={<ViewHistory/>}/>
                     </Routes>
                 </HashRouter>
             </ThemeProvider>

@@ -18,16 +18,15 @@ export default function BasicRating(props) {
     const [value, setValue] = React.useState(0);
     const [hover, setHover] = React.useState(-1);
 
-    function onSubmit(){
+    function onSubmit() {
         /* 1. enregistrer le rating */
         let history = localStorage.getItem("history"); //on regarde la valeur qui correspond à la clé "history"
-        if(history == null){ //s'il n'y a aucune valeur correspondante
+        if (history == null) { //s'il n'y a aucune valeur correspondante
             history = []; //on crée une liste qui vide qui pourra prendre les informations
-        }
-        else{
+        } else {
             history = JSON.parse(history) //tant qu'on rajoute des valeurs, on les convertit de String -> Objet
         }
-        history.push({imgURL : props.url, rating: value}) //chaque valeur a un objet de deux attributs qui lui est associé
+        history.push({imgURL: props.url, rating: value}) //chaque valeur a un objet de deux attributs qui lui est associé
         localStorage.setItem("history", JSON.stringify(history)) //on rajoute l'objet dans la localStorage
         /* 2. fetch data */
         props.fetch_data()
@@ -42,18 +41,20 @@ export default function BasicRating(props) {
     return (
         <Box
             sx={{
-                '& > legend': { mt: 2 },
+                '& > legend': {mt: 2},
             }}>
             <Typography component="legend"
-                        sx={{fontFamily: 'Gabriola',
+                        sx={{
+                            fontFamily: 'Gabriola',
                             color: 'black',
                             fontSize: '30px',
-                            display:'flex',
-                            alignItems:'center',
-                            justifyContent:'center'}}>
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center'
+                        }}>
                 <b>Rate this dog!</b></Typography>
             <Rating name="customized-10"
-                    defaultValue={10} max={10} readOnly />
+                    defaultValue={10} max={10} readOnly/>
             <Rating
                 name="hover-feedback"
                 value={value}
@@ -65,15 +66,16 @@ export default function BasicRating(props) {
                 onChangeActive={(event, newHover) => {
                     setHover(newHover);
                 }}
-                emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}
+                emptyIcon={<StarIcon style={{opacity: 0.55}} fontSize="inherit"/>}
             />
             {value !== null && (
-                <Box sx={{ ml: 2 }}>{labels[hover !== -1 ? hover : value]}</Box>
+                <Box sx={{ml: 2}}>{labels[hover !== -1 ? hover : value]}</Box>
             )}
             <br/>
             <Button variant="contained" sx={{
-                display:'block',
-                margin:'auto'}} onClick={onSubmit}>Submit</Button>
+                display: 'block',
+                margin: 'auto'
+            }} onClick={onSubmit}>Submit</Button>
         </Box>
     );
 }
